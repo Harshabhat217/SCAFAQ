@@ -10,13 +10,20 @@
         background-color: #f0f0f5;
         font-family: 'Segoe UI', sans-serif;
       }
+      .faq-wrap {
+        padding: 12px;
+      }
+      /* Gap between cards via margin instead of flex gap */
+      .accordion-item + .accordion-item {
+        margin-top: 8px;
+      }
       .accordion-item {
         border-radius: 14px !important;
         overflow: hidden;
         box-shadow: 0 1px 4px rgba(0,0,0,0.06);
         border: none;
       }
-      .accordion-button.collapsed {
+      .accordion-button {
         font-size: 0.95rem;
         font-weight: 600;
         color: #1a1a2e;
@@ -47,10 +54,9 @@
     </style>
   </head>
   <body>
-
-    <!-- ONE wrapper, ONE accordion — data-bs-parent="#faqAccordion" closes siblings automatically -->
-    <div class="p-2">
-      <div class="accordion d-flex flex-column gap-2" id="faqAccordion">
+    <div class="faq-wrap">
+      <!-- Single accordion id is key — Bootstrap uses this as the parent to close siblings -->
+      <div id="faqAccordion">
 
         <div class="accordion-item">
           <h2 class="accordion-header">
